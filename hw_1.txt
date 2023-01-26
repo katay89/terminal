@@ -1,0 +1,95 @@
+Terminal. HW_2
+
+1. Посмотреть где я
+pwd
+
+2. Создать папку
+mkdir qa
+
+3. Зайти в папку
+cd qa
+
+4. Создать 3 папки
+mkdir papka_1 papka_2 papka_3
+
+5. Зайти в любую папку
+cd papka_2
+
+6. Создать 5 файлов (3 txt, 2 json)
+touch f1.txt f2.txt f3.txt f_1.json f_2.json
+
+7. Создать 3 папки
+mkdir papka1 papka2 papka3
+
+8. Вывести список содержимого папки
+ls -la
+
+9. + Открыть любой txt файл
+10. + написать туда что-нибудь, любой текст.
+11. + сохранить и выйти.
+cat >>f1.txt
+line1
+line2
+line3
+line4
+line5
+line6
+line7
+ctrl+c
+
+12. Выйти из папки на уровень выше
+cd ..
+
+13. переместить любые 2 файла, которые вы создали, в любую другую папку.
+cd papka_2
+mv f2.txt f_2.json ../papka_1
+
+14. скопировать любые 2 файла, которые вы создали, в любую другую папку.
+cd ..
+cd papka_1
+cp f2.txt f_2.json ../papka_3
+
+15. Найти файл по имени
+cd ../papka_3
+find f_2.json
+
+16. просмотреть содержимое в реальном времени
+tail f1.txt
+
+17. вывести несколько первых строк из текстового файла
+cd ../papka_2
+gead -n4 f1.txt
+
+18. вывести несколько последних строк из текстового файла
+tail -n4 f1.txt
+
+19. просмотреть содержимое длинного файла 
+less f1.txt
+:wq
+
+20. вывести дату и время
+date
+
+21. Отправить http запрос на сервер. http://162.55.220.72:5006/terminal-hw-request
+curl http://162.55.220.72:5006/terminal-hw-request
+приходит ответ с другим заданием.
+curl "http://162.55.220.72:5006/get_method?name=Alexandr&age=33"
+
+22. Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+touch myscript
+vim myscript
+INS
+#!/bin/bash
+mkdir podpapka_1
+cd podpapka_1
+mkdir pp1 pp2 pp3
+cd pp1
+touch file1.txt file2.txt file3.txt file_1.json file_2.json
+mkdir ppp1 ppp2 ppp3
+ls -la
+mv file2.txt file_2.json ../pp2
+ESC
+:wq
+chmod +x ./myscript
+./myscript
+
